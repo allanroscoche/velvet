@@ -111,7 +111,10 @@ obj/%.o: src/%.c
 obj/dbg/%.o: src/%.c
 	$(CC) $(CFLAGS) $(DEBUG) $(DEF) -c $? -o $@ 
 
-doc: Manual.pdf
+doc: Manual.pdf Doxygen
+
+Doxygen: doc/Doxyfile
+	cd doc; doxygen Doxyfile
 
 Manual.pdf: doc/manual_src/Manual.tex doc/manual_src/Columbus_manual.tex
 	cd doc/manual_src; pdflatex Manual.tex; pdflatex Manual.tex; mv Manual.pdf ../..; pdflatex Columbus_manual.tex; mv Columbus_manual.pdf ../..
