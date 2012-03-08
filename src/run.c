@@ -18,6 +18,16 @@ Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 */
+/** \mainpage Velvet Assembler
+ * O Projeto se divide em 2 executáveis: velveth e velvetg \n
+ * O arquivo correspondente ao velveth: run.c
+ * \n
+ * O arquivo correspondente ao velvetg: run2.c
+ *
+ * \file run.c
+ * 
+ **/
+
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
@@ -84,6 +94,11 @@ static void printUsage()
 	puts("\t\t[Both files are picked up by graph, so please leave them there]");
 }
 
+/** velveth \n
+ * Funções importantes: \n
+ * parseDataAndReadFiles(); Le os arquivos de entrada \n
+ * inputSequenceArrayIntoSplayTableAndArchive(); Insere as leituras na Tabela Splay e salva em arquivo
+ **/
 int main(int argc, char **argv)
 {
 	ReadSet *allSequences = NULL;

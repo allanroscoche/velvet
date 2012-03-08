@@ -964,6 +964,12 @@ Mask ** scanBinaryReferenceSequences(SequencesReader *seqReadInfo, IDnum referen
 	fclose(file);
 	return referenceMasks;
 }
+/** \brief Gera a estrutura de arquivos para o velvetg.
+ * \param reads Ponteiro para a Tabela de leituras
+ * \param table Ponteiro para a TabelaSplay
+ * \param filename Nome do arquivo de saida
+ *
+ **/
 
 void inputSequenceArrayIntoSplayTableAndArchive(ReadSet * reads,
 						SplayTable * table,

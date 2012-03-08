@@ -40,10 +40,10 @@ static const Codon FILTER2 = ~(((Codon) 3) << 4);
 // Binary 00111111
 static const Codon FILTER3 = (Codon) ~ ((Codon) 3 << 6);
 
-//
-// Adds a number into the Codon pointed to by codonPtr at the desired
-// position (0, 1, 2, or 3);
-//
+/**
+ * Adds a number into the Codon pointed to by codonPtr at the desired
+ * position (0, 1, 2, or 3);
+ **/
 void
 writeNucleotideNumber(Nucleotide nucleotide, Codon * codonPtr,
 		      Coordinate position)
@@ -69,10 +69,10 @@ TightString *getTightStringInArray(TightString * tString,
 	return tString + position;
 }
 
-//
-// Adds a nucleotide into the Codon pointed to by codonPtr at the desired
-// position (0, 1, 2, or 3);
-//
+/**
+ * Adds a nucleotide into the Codon pointed to by codonPtr at the desired
+ * position (0, 1, 2, or 3);
+**/
 void writeNucleotide(Nucleotide nucleotide, Codon * codonPtr, int position)
 {
 	int nucleotideNum;
@@ -128,9 +128,9 @@ static void fillTightStringWithString(TightString * tString,
 	free(sequence);
 }
 
-//
-// Creates a tightString from an array of normal strings
-//
+/**
+ * Creates a tightString from an array of normal strings
+ **/
 TightString *newTightStringArrayFromStringArray(char **sequences,
 						IDnum sequenceCount,
 						char **tSeqMem)
@@ -313,7 +313,9 @@ IDnum getLength(TightString * tString)
 {
 	return tString->length;
 }
-
+/** Desaloca as estruturas
+ * \param tString Ponteiro da estrutura para desalocação de memória
+ **/
 void destroyTightString(TightString * tString)
 {
 	free(tString->sequence);
