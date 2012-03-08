@@ -96,8 +96,8 @@ static void printUsage()
 
 /** velveth \n
  * Funções importantes: \n
- * parseDataAndReadFiles(); Le os arquivos de entrada \n
- * inputSequenceArrayIntoSplayTableAndArchive(); Insere as leituras na Tabela Splay e salva em arquivo
+ * parseDataAndReadFiles(); Indexação das leituras \n
+ * inputSequenceArrayIntoSplayTableAndArchive(); Inserção das leituras na Árvore Splay
  **/
 int main(int argc, char **argv)
 {
