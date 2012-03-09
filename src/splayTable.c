@@ -430,6 +430,11 @@ static void printAnnotations(IDnum *sequenceIDs, Coordinate * coords,
 	TightString * tString = getTightStringInArray(array, seqID - 1); 
 	int thread = 0;
 
+	//! TimeStamp 1 para Arvore Splay 
+	time_t t1,t2;
+	(void)time(&t1);
+
+
 	clearKmer(&word);
 	clearKmer(&antiWord);
 
@@ -604,6 +609,11 @@ static void printAnnotations(IDnum *sequenceIDs, Coordinate * coords,
 	velvetFprintf(file, "%s", annotationBuffer->str);
 	resetStringBuffer(annotationBuffer);
 #endif
+
+	//! TimeStamp 2 para Árvore Splay
+	(void)time(&t2);
+	velvetLog("T:%d\n",(int)t2-(int)t1);
+	
 
 	return;
 }
@@ -1274,7 +1284,7 @@ void inputSequenceArrayIntoSplayTableAndArchive(ReadSet * reads,
 				}
 				second_in_pair = reads->categories[index] % 2 && isSecondInPair(reads, index);
 
-				// Hashing the reads
+				//! Hashing the reads
 				if (table->kmerOccurenceTable)
 				    inputSequenceIntoSplayTable(array, table,
 								outfile,
